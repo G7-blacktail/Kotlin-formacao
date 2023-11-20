@@ -106,7 +106,121 @@ fun main(args: Array<String>) {
         println("Apos adicionar e remover itens: $fruta ")
 
     // Mapas
+    // Apenas leitura
+    val readJuiceMenu = mapOf("Maça" to 100, "Kiwi" to 190, "Laranja" to 100);
+        println("Menu de sucos disponíveis: $readJuiceMenu");
+    // Mutavél
+    val juiceMenu: MutableMap<String, Int> = mutableMapOf("Maça" to 100, "Kiwi" to 190, "Laranja" to 100);
+        println("Menu de sucos mutaveis: $juiceMenu");
+    // Imutavel
+    val juiceMenuLocked: Map<String, Int> = juiceMenu;
+        println("Agora é imutavel: $juiceMenuLocked");
+    // Acessando valores
+        println("O valor do suco de laranja é: ${readJuiceMenu["Laranja"]}");
+    // Contando a quantidade de itens no mapa
+        println("Este mapa possui pares de valor-chave ${readJuiceMenu.count()}")
+    // Adicionando e removendo itens do mapa
+        juiceMenu.put("Coco", 150);
+        juiceMenu.put("Acerola", 80);
+        juiceMenu.remove("Laranja");
+        println("Este é o menu após remover itens e adicionar itens: $caracter $juiceMenu");
+    // Procurando um item especifico
+        println(juiceMenu.containsKey("Kiwi"));
+    // Obtendo só as chaves
+        println(juiceMenu.keys)
+    // Obtendo só os valores
+        println(juiceMenu.values)
+    // Verificando se está la lista
+        // chave
+        println("Laranja" in juiceMenu.keys);
+        // valor
+        println(200 in juiceMenu.values);
+
+    println("-----------------------------------------------------------------------------------------------------------------------");
+
+    // Condicionais (if and else)
+    val a: Int;
+    var check : Boolean = true;
+
+        if(check) { a = 1}
+        else { a = 6}
+
+    println("A variavel 'a' é igual a: $a")
+
+    // condição "ternária" em Kotlin
+    val x = 2;
+        println(if (a > x) a else x); // retornará o valor 2
+
+    println("-----------------------------------------------------------------------------------------------------------------------");
+    // Laço de repetição (When)
+    var obj = "Hello";
+
+        when(obj){
+            //verifica se obj é igual a "1"
+            "1" -> println("One");
+
+            //Verifica se obj é igual a "Hello"
+            "Hello" -> println("Greeting");
+
+            // instrução padrão
+            else -> println("Unkown");
+        }
+
+        // atribuindo a condição diretamente a uma váriavel
+
+    var obj2 = "World";
+
+    var result = when(obj2){
+        "2" -> "Um"
+        "World" -> "Greeting"
+        else -> "Não encontrado"
+    }
+        println(result);
     
+    // Verificando uma cadeia de booleanos com when
+    val temperadura = 18;
 
+        val description = when{
+            temperadura < 0 -> "Muito frio"
+            temperadura < 10 -> "Um pouco frio"
+            temperadura < 20 -> "Quente"
+            else -> "Muito quente"
+        }
 
+        println(description);
+        println("-----------------------------------------------------------------------------------------------------------------------");
+
+        // loops
+        for (numbers in 1..5){
+            println(numbers)
+        }
+
+        val bolos = listOf("Cenoura", "Queijo", "Chocolate");
+            for(bolo in bolos){
+                println("Que delícia, é um bolo de $bolo !");
+            }
+
+        println("-----------------------------------------------------------------------------------------------------------------------");
+
+        var bolosComidos = 0;
+            while(bolosComidos < 3){
+                println("Coma um bolo");
+                bolosComidos++;
+            }
+
+        println("-----------------------------------------------------------------------------------------------------------------------");
+
+        // do-while
+        var cakesEaten = 0;
+        var cakesBaked = 0;
+
+            while(cakesEaten < 3){
+                println("Eat cakes");
+                cakesEaten++;
+            }
+
+            do{
+                println("Bake cake");
+                cakesBaked++;
+            } while (cakesBaked < cakesEaten);
 }
