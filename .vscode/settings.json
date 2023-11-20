@@ -1,3 +1,6 @@
 {
-    "code-runner.showExecutionMessage": false
+    "code-runner.showExecutionMessage": false,
+    "code-runner.executorMap": {
+        "kotlin": "cd $dir && kotlinc $fileName -include-runtime -d $fileNameWithoutExt.jar && java -jar $fileNameWithoutExt.jar"
+    }
 }
