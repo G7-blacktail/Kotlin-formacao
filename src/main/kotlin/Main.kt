@@ -223,4 +223,8 @@ fun main(args: Array<String>) {
                 println("Bake cake");
                 cakesBaked++;
             } while (cakesBaked < cakesEaten);
+
+            println("----------------------------------------------------------------------------------------------------------------------- $caracter  $caracter");
+            // criando funções com Kotlin
+            
 }
